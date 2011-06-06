@@ -89,7 +89,7 @@ body {
 }
 
 #footer .footer_inner span {
-  background-image: url('images/footer.png');
+  background-image: url('img/footer.png');
   display: block;
   height: 36px;
   position: absolute;
@@ -98,7 +98,7 @@ body {
 }
 
 #footer .footer_inner .text {
-  background: url('images/footer_bg.png') repeat-x left top;
+  background: url('img/footer_bg.png') repeat-x left top;
   line-height: 14px;
   padding: 4px 10px 0;
   margin: 0 7px;
@@ -113,7 +113,7 @@ body {
 /* common */
 
 #header {
-  background: url('images/header.jpg') no-repeat left top transparent;
+  background: url('img/header.jpg') no-repeat left top transparent;
   height: 112px;
   position: relative;
   padding-top: 158px;
@@ -168,18 +168,18 @@ body {
 }
 
 #nav_left {
-  background: url('images/nav_left.png') no-repeat left top transparent;
+  background: url('img/nav_left.png') no-repeat left top transparent;
   height: 95px;
   padding-right: 16px;
 }
 
 #nav_right {
-  background: url('images/nav_right.png') no-repeat right top transparent;
+  background: url('img/nav_right.png') no-repeat right top transparent;
   height: 95px;
 }
 
 #nav {
-  background: url('images/nav.png') repeat-x left top transparent;
+  background: url('img/nav.png') repeat-x left top transparent;
   display: block;
   height: 86px;
   margin: 0 16px 0 7px;
@@ -196,7 +196,7 @@ body {
 }
 
 #nav li span {
-  background-image: url('images/mnu.png');
+  background-image: url('img/mnu.png');
   background-repeat: no-repeat;
   background-position: left top;
   display: block;
@@ -215,7 +215,7 @@ body {
 }
 
 #nav a:link, #nav a:visited {
-  background-image: url('images/mnu_bg.png');
+  background-image: url('img/mnu_bg.png');
   background-repeat: repeat-x;
   background-position: left top;
   color: #e7e6e6;
@@ -267,7 +267,7 @@ body {
 }
 
 .userbar form div {
-  background: url('images/login_bg.png') repeat-x left top;
+  background: url('img/login_bg.png') repeat-x left top;
   height: 33px;
   padding: 2px 90px 5px 5px;
 }
@@ -312,7 +312,7 @@ body {
 }
 
 .userbar .notext {
-  background-image: url('images/login.png');
+  background-image: url('img/login.png');
   background-repeat: no-repeat;
   height: 40px;
   padding: 0;
@@ -338,13 +338,13 @@ body {
 }
 
 #sidebar_nav ul ul {
-  background: url('images/sidebar_submenu.png') no-repeat left top;
+  background: url('img/sidebar_submenu.png') no-repeat left top;
   border-bottom: #7b7b7b 1px solid;
   padding: 10px;
 }
 
 #sidebar_nav ul div {
-  background: url('images/sidebar_submenu_bg.png') repeat-y left top;
+  background: url('img/sidebar_submenu_bg.png') repeat-y left top;
   border-bottom: #999a9a 1px solid;
   border-radius: 2px;
 }
@@ -371,7 +371,7 @@ body {
 }
 
 #sidebar_nav ul li a span.text, .block h2 span.text, #content .block h1 span.text {
-  background: url('images/sidebar_mnu_bg.png') repeat-x left top;
+  background: url('img/sidebar_mnu_bg.png') repeat-x left top;
   height: 18px;
   margin: 0 10px;
   padding: 10px 0 11px;
@@ -379,7 +379,7 @@ body {
 
 
 #sidebar_nav ul li a span.notext, .block span.notext, #content .block h1 span.notext {
-  background-image: url('images/sidebar_mnu.png');
+  background-image: url('img/sidebar_mnu.png');
   background-repeat: no-repeat;
   height: 39px;
   position: absolute;
@@ -411,11 +411,11 @@ body {
 }
 
 .block h2 span.text, #content .block h1 span.text{
-  background: url('images/block_header_bg.png') repeat-x left top;
+  background: url('img/block_header_bg.png') repeat-x left top;
   margin: 0 6px;
 }
 
 .block span.notext, #content .block h1 span.notext {
-  background-image: url('images/block_header.png');
+  background-image: url('img/block_header.png');
   width: 6px;
 }

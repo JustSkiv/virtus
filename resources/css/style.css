@@ -67,7 +67,7 @@ h1, h2 {
 }
 
 .toggle li a {
-  background-image: url('images/idown.png');
+  background-image: url('img/idown.png');
   background-position: left top;
   background-repeat: no-repeat;
   display: block;
@@ -76,6 +76,6 @@ h1, h2 {
 }
 
 .toggle li.active a {
-  background-image: url('images/icross.png');
+  background-image: url('img/icross.png');
 }
 

@@ -18,5 +18,3 @@ class Main extends CI_Controller {
     $this->templates->display('index.tpl'); //указываем имя шаблона
 	}
 }
-
-

@@ -27,12 +27,12 @@
 	/**
 	 * Site Title, example.com
 	 */
-	$config['site_title']		   = "Example.com";
+	$config['site_title']		   = "RG Virtus - auth";
 	
 	/**
 	 * Admin Email, admin@example.com
 	 */
-	$config['admin_email']		   = "admin@example.com";
+	$config['admin_email']		   = "just.skiv@gmail.com";
 	
 	/**
 	 * Default group, use name

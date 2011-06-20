@@ -11,7 +11,7 @@
   <div id="container">
 
     <div id="header">
-      <a id="logo" href="javascript:void(0)" title="Virtus"><img src="{$resource_dir}/images/logo.png" alt="Virtus" /></a>
+      <a id="logo" href="javascript:void(0)" title="Virtus"><img src="{$resource_dir}/img/logo.png" alt="Virtus" /></a>
 
       <div id="login" class="userbar_wrapper">
         <div class="userbar">

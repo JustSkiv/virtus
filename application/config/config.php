@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/virtus/';
+$config['base_url']	= 'http://virtus.loc/';
 $config['resource_dir'] = $config['base_url'] . 'resources';
 
 /*

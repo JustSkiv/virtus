@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <title>Торренты | Virtus</title>
+  <title>{$page_name} | Virtus</title>
   <link href="{$resource_dir}/css/layout.css" media="screen" rel="stylesheet" type="text/css"/>
   <link href="{$resource_dir}/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
 </head>
@@ -28,7 +28,7 @@
           <div id="nav_right">
             <ul id="nav" class="nav nolist">
               <li class="first active"><a href="javascript:void(0)"><span class="notext">&nbsp;</span>Главная<span class="notext right">&nbsp;</span></a></li>
-              <li><a href="javascript:void(0)"><span class="notext">&nbsp;</span>Торренты<span class="notext right">&nbsp;</span></a></li>
+              <li><a href="torrents"><span class="notext">&nbsp;</span>Торренты<span class="notext right">&nbsp;</span></a></li>
               <li><a href="javascript:void(0)"><span class="notext">&nbsp;</span>Форум<span class="notext right">&nbsp;</span></a></li>
               <li class="last"><a href="javascript:void(0)"><span class="notext">&nbsp;</span>О нас<span class="notext right">&nbsp;</span></a></li>
             </ul>
@@ -53,7 +53,7 @@
 
           {foreach from=$menu item=item}
             <li>
-              <a href="#asd" title="">
+              <a href="{$item.url}" title="">
                 <span class="notext left_border">&nbsp;</span>
                 <span class="text">{$item.name}</span>
                 <span class="notext right_border">&nbsp;</span>

@@ -9,6 +9,8 @@ class Main extends CI_Controller
 {
   public function index()
   {
+
+
     $this->load->library('templates');
     $this->load->model('menu');
     $this->load->model('news');
@@ -17,13 +19,14 @@ class Main extends CI_Controller
     $date_format = "%d.%m.%y";
     $this->templates->assign(
       array(
-        'menu' => $this->menu->getMenuNames(),
-        'news' => $this->news->getNews(),
-        'resource_dir' => $resource_dir,
-        'date_format' => $date_format,
-        'page_name' => 'Новости'
+           'menu' => $this->menu->getMenuNames(),
+           'news' => $this->news->getNews(),
+           'resource_dir' => $resource_dir,
+           'date_format' => $date_format,
+           'page_name' => 'Новости'
       )
     );
+    $this->fb->info($this->news->getNews());
     $this->templates->display('index.tpl');
   }
 }

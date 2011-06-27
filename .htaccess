@@ -1,7 +1,7 @@
 AddDefaultCharset utf-8
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /virtus
+    RewriteBase /
     RewriteCond $1 !^(index\.php|img|public|robots\.txt|css|js)
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d

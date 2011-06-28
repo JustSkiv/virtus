@@ -17,8 +17,20 @@
         <div class="userbar">
           <div class="left_border notext">&nbsp;</div>
           <div class="right_border notext">&nbsp;</div>
-          <div class="text">Добро пожаловать: Godrik_</div>
-          <a href="javascript:void(0)">Личный кабинет</a>
+
+					{if $is_authorized}
+          	<div class="text">Добро пожаловать: Godrik_</div>
+          	<a href="javascript:void(0)">Личный кабинет</a>
+					{else}
+			    	<form method="post" action="">
+			      	<div>
+			        	Логин <input type="text" class="form-text form-log" value="" name="login" />
+			        	Пароль <input type="text" class="form-text form-pass" value="" name="password" />
+			      	</div>
+			      	<p><input class="submit" type="submit" value="Вход" />
+			      		<a href="javascript:void(0)">Регистрация</a></p>
+			    		</form>
+					{/if}
 
         </div>
       </div>

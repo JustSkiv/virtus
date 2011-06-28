@@ -5,8 +5,9 @@
     <span class="text">{$page_name}</span>
     <span class="notext right_border">&nbsp;</span>
   </h1>
-  <ul class="nolist toggle">
-    
-  </ul>
+
+  dsdsa
+
+
 </div><!-- //block -->
 {include file="blocks/footer.tpl"}

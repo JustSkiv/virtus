@@ -24,7 +24,6 @@ class Main extends CI_Controller
            'page_name' => 'Новости'
       )
     );
-    $this->fb->info($this->news->getNews());
     $this->templates->display('index.tpl');
   }
 }

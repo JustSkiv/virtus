@@ -20,13 +20,14 @@
           <div class="right_border notext">&nbsp;</div>
 
 					{if $is_authorized}
-          	<div class="text">Добро пожаловать: Godrik_</div>
+          	<div class="text">Добро пожаловать: {$current_user.username}</div>
           	<a href="javascript:void(0)">Личный кабинет</a>
+            <a href="{$base_url}auth/logout">Выход</a>
 					{else}
-			    	<form method="post" action="">
+			    	<form method="post" action="{$base_url}auth/login">
 			      	<div>
-			        	Логин <input type="text" class="form-text form-log" value="" name="login" />
-			        	Пароль <input type="text" class="form-text form-pass" value="" name="password" />
+			        	Email <input type="text" class="form-text form-log" value="" name="email" />
+			        	Пароль <input type="password" class="form-text form-pass" value="" name="password" />
 			      	</div>
 			      	<p><input class="submit" type="submit" value="Вход" />
 			      		<a href="javascript:void(0)">Регистрация</a></p>

@@ -10,9 +10,9 @@
       <?php echo form_input($first_name);?>
       </p>
       
-      <p>Last Name:<br />
-      <?php echo form_input($last_name);?>
-      </p>
+<!--      <p>Last Name:<br />-->
+<!--      --><?php //echo form_input($last_name);?>
+<!--      </p>-->
       
 <!--      <p>Company Name:<br />-->
 <!--      --><?php //echo form_input($company);?>

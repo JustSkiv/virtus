@@ -96,7 +96,7 @@ class Auth extends Controller {
 		$logout = $this->ion_auth->logout();
 
 		//redirect them back to the page they came from
-		redirect('auth', 'refresh');
+		redirect($this->config->item('base_url'), 'refresh');
 	}
 
 	//change password
@@ -358,7 +358,77 @@ class Auth extends Controller {
 				'type' => 'password',
 				'value' => $this->form_validation->set_value('password_confirm'),
 			);
+      FB::dump('info', $this->data);
+
 			$this->load->view('auth/create_user', $this->data);
+		}
+	}
+
+  function register()
+	{
+		$this->data['title'] = "Create User";
+
+		if ($this->ion_auth->logged_in())
+		{
+      redirect($this->config->item('base_url'), 'refresh');
+		}
+
+		//validate form input
+		$this->form_validation->set_rules('first_name', 'First Name', 'required|xss_clean');
+		$this->form_validation->set_rules('email', 'Email Address', 'required|valid_email');
+		$this->form_validation->set_rules('password', 'Password', 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
+		$this->form_validation->set_rules('password_confirm', 'Password Confirmation', 'required');
+
+		if ($this->form_validation->run() == true)
+		{
+			$username = strtolower($this->input->post('first_name'));
+			$email = $this->input->post('email');
+			$password = $this->input->post('password');
+		}
+		if ($this->form_validation->run() == true && $this->ion_auth->register($username, $password, $email))
+		{ //check to see if we are creating the user
+			//redirect them back to the admin page
+			$this->session->set_flashdata('message', "User Created");
+      redirect($this->config->item('base_url'), 'refresh');
+			//redirect("auth", 'refresh');
+		}
+		else
+		{ //display the create user form
+			//set the flash data error message if there is one
+			$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+
+			$this->data['first_name'] = array('name' => 'first_name',
+				'id' => 'first_name',
+				'type' => 'text',
+				'value' => $this->form_validation->set_value('first_name'),
+			);
+			$this->data['email'] = array('name' => 'email',
+				'id' => 'email',
+				'type' => 'text',
+				'value' => $this->form_validation->set_value('email'),
+			);
+			$this->data['password'] = array('name' => 'password',
+				'id' => 'password',
+				'type' => 'password',
+				'value' => $this->form_validation->set_value('password'),
+			);
+			$this->data['password_confirm'] = array('name' => 'password_confirm',
+				'id' => 'password_confirm',
+				'type' => 'password',
+				'value' => $this->form_validation->set_value('password_confirm'),
+			);
+
+      $resource_dir = $this->config->item('resource_dir');
+      $date_format = "%d.%m.%y";
+      $this->templates->assign(
+      array(
+           'menu' => $this->menu->getMenuNames(),
+           'resource_dir' => $resource_dir,
+           'date_format' => $date_format,
+           'page_name' => 'Регистрация'
+      )
+    );
+      $this->templates->display('register.tpl');
 		}
 	}
 

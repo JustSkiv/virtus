@@ -299,7 +299,14 @@ body {
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
-  width: 50px;
+}
+
+.userbar input.form-log {
+  width: 180px;
+}
+
+.userbar input.form-pass {
+  width: 80px;
 }
 
 .userbar input.submit {

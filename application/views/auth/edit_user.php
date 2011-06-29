@@ -10,21 +10,21 @@
       <?php echo form_input($firstName);?>
       </p>
       
-      <p>Last Name:<br />
-      <?php echo form_input($lastName);?>
-      </p>
+<!--      <p>Last Name:<br />-->
+<!--      --><?php //echo form_input($lastName);?>
+<!--      </p>-->
       
-      <p>Company Name:<br />
-      <?php echo form_input($company);?>
-      </p>
-      
-      <p>Email:<br />
-      <?php echo form_input($email);?>
-      </p>
-      
-      <p>Phone:<br />
-      <?php echo form_input($phone1);?>-<?php echo form_input($phone2);?>-<?php echo form_input($phone3);?>
-      </p>
+<!--      <p>Company Name:<br />-->
+<!--      --><?php //echo form_input($company);?>
+<!--      </p>-->
+<!--      -->
+<!--      <p>Email:<br />-->
+<!--      --><?php //echo form_input($email);?>
+<!--      </p>-->
+<!--      -->
+<!--      <p>Phone:<br />-->
+<!--      --><?php //echo form_input($phone1);?><!-----><?php //echo form_input($phone2);?><!-----><?php //echo form_input($phone3);?>
+<!--      </p>-->
       
       <p>
       	<input type=checkbox name="reset_password"> <label for="reset_password">Reset Password</label>

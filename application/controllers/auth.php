@@ -283,23 +283,23 @@ class Auth extends Controller {
 		$this->form_validation->set_rules('first_name', 'First Name', 'required|xss_clean');
 		$this->form_validation->set_rules('last_name', 'Last Name', 'required|xss_clean');
 		$this->form_validation->set_rules('email', 'Email Address', 'required|valid_email');
-		$this->form_validation->set_rules('phone1', 'First Part of Phone', 'required|xss_clean|min_length[3]|max_length[3]');
-		$this->form_validation->set_rules('phone2', 'Second Part of Phone', 'required|xss_clean|min_length[3]|max_length[3]');
-		$this->form_validation->set_rules('phone3', 'Third Part of Phone', 'required|xss_clean|min_length[4]|max_length[4]');
-		$this->form_validation->set_rules('company', 'Company Name', 'required|xss_clean');
+//		$this->form_validation->set_rules('phone1', 'First Part of Phone', 'required|xss_clean|min_length[3]|max_length[3]');
+//		$this->form_validation->set_rules('phone2', 'Second Part of Phone', 'required|xss_clean|min_length[3]|max_length[3]');
+//		$this->form_validation->set_rules('phone3', 'Third Part of Phone', 'required|xss_clean|min_length[4]|max_length[4]');
+//		$this->form_validation->set_rules('company', 'Company Name', 'required|xss_clean');
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
 		$this->form_validation->set_rules('password_confirm', 'Password Confirmation', 'required');
 
 		if ($this->form_validation->run() == true)
 		{
-			$username = strtolower($this->input->post('first_name')) . ' ' . strtolower($this->input->post('last_name'));
+			$username = strtolower($this->input->post('first_name'));
 			$email = $this->input->post('email');
 			$password = $this->input->post('password');
 
 			$additional_data = array('first_name' => $this->input->post('first_name'),
 				'last_name' => $this->input->post('last_name'),
-				'company' => $this->input->post('company'),
-				'phone' => $this->input->post('phone1') . '-' . $this->input->post('phone2') . '-' . $this->input->post('phone3'),
+//				'company' => $this->input->post('company'),
+//				'phone' => $this->input->post('phone1') . '-' . $this->input->post('phone2') . '-' . $this->input->post('phone3'),
 			);
 		}
 		if ($this->form_validation->run() == true && $this->ion_auth->register($username, $password, $email, $additional_data))

@@ -30,7 +30,7 @@
 			        	Пароль <input type="password" class="form-text form-pass" value="" name="password" />
 			      	</div>
 			      	<p><input class="submit" type="submit" value="Вход" />
-			      		<a href="javascript:void(0)">Регистрация</a></p>
+			      		<a href="{$base_url}auth/register">Регистрация</a></p>
 			    		</form>
 					{/if}
 

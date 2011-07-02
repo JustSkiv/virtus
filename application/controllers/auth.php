@@ -418,12 +418,10 @@ class Auth extends Controller {
 				'value' => $this->form_validation->set_value('password_confirm'),
 			);
 
-      $resource_dir = $this->config->item('resource_dir');
       $date_format = "%d.%m.%y";
       $this->templates->assign(
       array(
            'menu' => $this->menu->getMenuNames(),
-           'resource_dir' => $resource_dir,
            'date_format' => $date_format,
            'page_name' => 'Регистрация'
       )

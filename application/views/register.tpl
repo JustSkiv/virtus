@@ -15,9 +15,9 @@
         <input name="first_name" value="" id="first_name" type="text">
       </p>
 
-{*      <p>Фамилия(убрать):<br/>*}
-{*        <input name="last_name" value="" id="last_name" type="text">*}
-{*      </p>*}
+    {*      <p>Фамилия(убрать):<br/>*}
+    {*        <input name="last_name" value="" id="last_name" type="text">*}
+    {*      </p>*}
 
       <p>Адрес электронной почты:<br/>
         <input name="email" value="" id="email" type="text">

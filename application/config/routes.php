@@ -40,7 +40,8 @@
 
 $route['default_controller'] = "main";
 $route['404_override'] = '';
-
+$route['create/news'] = 'new_news';
+$route['register'] = 'auth/register';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

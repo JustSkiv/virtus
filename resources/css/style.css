@@ -79,3 +79,7 @@ h1, h2 {
   background-image: url('img/icross.png');
 }
 
+/*skiv*/
+.validation_errors {
+  color: red;
+}

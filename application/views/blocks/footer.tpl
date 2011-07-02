@@ -21,6 +21,10 @@
 
       <div class="notext clear-block">&nbsp;</div>
 
+    </div><!-- //content_wrapper -->
+
+  </div><!-- //container -->
+
       <div id="footer">
         <div class="footer_inner">
           <span class="notext left_border">&nbsp;</span>
@@ -30,10 +34,6 @@
           <span class="notext right_border">&nbsp;</span>
         </div><!-- //footer_inner -->
       </div><!-- //footer -->
-
-    </div><!-- //content_wrapper -->
-
-  </div><!-- //container -->
 
 </div><!-- //wrapper -->
 </body>

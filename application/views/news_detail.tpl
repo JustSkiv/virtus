@@ -10,6 +10,5 @@
 
   <div class="news_main_text">{$news.text}</div>
 
-
 </div><!-- //block -->
 {include file="blocks/footer.tpl"}

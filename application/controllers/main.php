@@ -11,13 +11,13 @@ class Main extends CI_Controller
   {
     $this->load->library('templates');
     $this->load->model('menu');
-    $this->load->model('news');
+    $this->load->model('news_model');
 
 
     $this->templates->assign(
       array(
            'menu' => $this->menu->getMenuNames(),
-           'news' => $this->news->getNews(),
+           'news' => $this->news_model->getNews(),
            'page_name' => 'Новости',
       )
     );

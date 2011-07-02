@@ -4,7 +4,7 @@
  * Date: 30.06.11
  * Time: 4:48
  */
-if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Init
 {
@@ -12,14 +12,16 @@ class Init
   {
     $CI =& get_instance();
     $CI->load->helper('url');
-//$CI->load->library('ion_auth');
+    $CI->load->model('menu');
+
+    //$CI->load->library('ion_auth');
     $current_page = $CI->uri->rsegment(1); //имя текущего контроллера
     $resource_dir = $CI->config->item('resource_dir');
     $date_format = "%d.%m.%y";
 
-
     $CI->templates->assign(
       array(
+           'menu' => $CI->menu->getMenuNames(),
            'resource_dir' => $resource_dir,
            'current_page' => $current_page,
            'date_format' => $date_format,

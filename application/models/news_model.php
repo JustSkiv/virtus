@@ -7,11 +7,11 @@
 
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class News extends CI_Model
+class News_model extends CI_Model
 {
   public $table = '';
 
-  function News()
+  function News_model()
   {
     parent::__construct();
     $this->table = 'news';
@@ -24,9 +24,16 @@ class News extends CI_Model
     return $query->result_array();
   }
 
+  function getNewsBySlug($slug)
+  {
+    $query = $this->db->get_where($this->table, array('slug' => $slug));
+    return $query->row_array();
+  }
+
   function addNews($slug)
   {
-    $user = $this->ion_auth->get_user_array();$this->fb->dump("user", $user);
+    $user = $this->ion_auth->get_user_array();
+    $this->fb->dump("user", $user);
     if ($user['group_id'] > 2)
       show_error("У вас недостаточно прав для просмотра данной страницы.", 404, "Ошибка доступа");
 
@@ -44,5 +51,5 @@ class News extends CI_Model
   }
 }
 
-/* End of file news.php */
-/* Location: ./application/controllers/news.php */
+/* End of file news_model.php */
+/* Location: ./application/controllers/news_model.php */

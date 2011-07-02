@@ -6,36 +6,44 @@
  */
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class New_news extends CI_Controller
+class News extends CI_Controller
 {
+  function  News()
+  {
+    parent::__construct();
+    $this->load->model('news_model');
+  }
 
   public function index()
   {
     $this->load->library('templates');
-    $this->load->model('menu');
-    $this->load->model('news');
-
-    $date_format = "%d.%m.%y";
     $this->templates->assign(
       array(
-           'menu' => $this->menu->getMenuNames(),
-           'news' => $this->news->getNews(),
-           'date_format' => $date_format,
+           'news' => $this->news_model->getNews(),
            'page_name' => 'Добавление новости',
-           'action' => site_url("new_news/create")
+           'action' => site_url("news/create"),
+           'validation_errors' => ''
       )
     );
     $this->templates->display('new_news.tpl');
   }
 
-  function detail()
+  function detail($slug)
   {
-    
+    $news = $this->news_model->getNewsBySlug($slug);
+    $this->templates->assign(
+      array(
+           'news' => $news,
+           'page_name' => "$news[title]",
+      )
+    );
+    $this->templates->display('news_detail.tpl');
   }
+
   function create()
   {
     $this->load->library('form_validation');
-    $this->load->model('news');
+
     $this->data['title'] = "Добавлям новость...";
     $validation_errors = '';
 
@@ -56,7 +64,7 @@ class New_news extends CI_Controller
     } else {
       $validation_errors = validation_errors();
     }
-    if ($this->form_validation->run() == true && $this->news->addNews($slug)) {
+    if ($this->form_validation->run() == true && $this->news_model->addNews($slug)) {
       $this->session->set_flashdata('message', "Новость добавлена");
       redirect($this->config->item('base_url'), 'refresh');
     }
@@ -102,7 +110,7 @@ class New_news extends CI_Controller
       $this->templates->assign(
         array(
              'menu' => $this->menu->getMenuNames(),
-             'news' => $this->news->getNews(),
+             'news' => $this->news_model->getNews(),
              'date_format' => $date_format,
              'page_name' => 'Добавление новости',
              'action' => site_url("new_news/create"),
@@ -114,5 +122,5 @@ class New_news extends CI_Controller
   }
 }
 
-/* End of file new_news.php */
-/* Location: ./application/controllers/new_news.php */
+/* End of file news_model.php */
+/* Location: ./application/controllers/news_model.php */

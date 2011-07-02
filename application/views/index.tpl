@@ -10,7 +10,7 @@
   {foreach from=$news item=new}
     {$new.title}
     <li {*id="news1"*} class="active">
-      <a class="news_link" href="javascript:void(0)">{$new.created_at|date_format:$date_format}: {$new.title}</a>
+      <a class="news_link" href="{$base_url}news/detail/{$new.slug}">{$new.created_at|date_format:$date_format}: {$new.title}</a>
 
       <div class="grey sublock">
         {$new.teaser}

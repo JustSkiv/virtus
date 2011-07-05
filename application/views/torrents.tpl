@@ -1,4 +1,4 @@
-{include file="blocks/head.tpl"}
+{include file="blocks/header.tpl"}
 <div class="block">
   <h1>
     <span class="notext left_border">&nbsp;</span>

@@ -8,13 +8,17 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class News extends CI_Controller
 {
-  function  News()
+  function News()
   {
     parent::__construct();
     $this->load->model('news_model');
   }
 
   public function index()
+  {
+    //news_page
+  }
+  public function neww()
   {
     $this->load->library('templates');
     $this->templates->assign(
@@ -47,6 +51,7 @@ class News extends CI_Controller
     $this->data['title'] = "Добавлям новость...";
     $validation_errors = '';
 
+    //TODO: if admin
     if (!$this->ion_auth->logged_in()) {
       show_error('Извините, у вас недостаточно прав для данного действия');
     }
@@ -113,7 +118,7 @@ class News extends CI_Controller
              'news' => $this->news_model->getNews(),
              'date_format' => $date_format,
              'page_name' => 'Добавление новости',
-             'action' => site_url("new_news/create"),
+             'action' => site_url("news/create"),
              'validation_errors' => $validation_errors
         )
       );

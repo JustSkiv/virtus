@@ -7,18 +7,12 @@
 
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Menu extends CI_Model
+class Menu_model extends Crud
 {
-  function Menu()
+  function Menu_model()
   {
     parent::__construct();
-    //__construct
-  }
-
-  function getMenuNames()
-  {
-    $query = $this->db->query('SELECT * FROM menu');
-    return $query->result_array();
+    $this->table = 'menu';
   }
 }
 

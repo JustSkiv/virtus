@@ -8,22 +8,35 @@
 
   <div class='mainInfo'>
     <p>Cимволом * отмечены поля, обязательные для заполнения.</p>
-    <div class="validation_errors" >{$validation_errors}</div>
+
+    <div class="validation_errors">{$validation_errors}</div>
     <div id="infoMessage"><?php echo $message;?></div>
-    <form action="{$action}" method="post" accept-charset="utf-8">
+    <form method="post" accept-charset="utf-8">
       <p>Заголовок:<br/>
         <input name="title" value="" id="title" type="text" size="39">
       </p>
 
-      <p>Кратко о новости:<br/>
-        <textarea name="teaser" id="teaser" rows="5" cols="50"></textarea>
+      <p>Жанр:<br/>
+        <select name="genre">
+          {foreach from=$genres item=genre}
+           <option value="{$genre.id}">{$genre.name}</option>
+          {/foreach}
+        </select>
       </p>
 
-      <p>Текст новости:<br/>
+      <p>Описание:<br/>
         <textarea name="text" id="text" rows="18" cols="50"></textarea>
       </p>
 
-      <p><input name="submit" value="Добавить новость" type="submit"></p>
+      <p>Общий размер раздачи:<br/>
+        <input name="size" value="" id="size" type="text" size="5">
+      </p>
+
+      <p>Количество файлов в раздаче:<br/>
+        <input name="files_count" value="" id="files_count" type="text" size="5">
+      </p>
+
+      <p><input name="submit" value="Добавить торрент" type="submit"></p>
     </form>
 
   </div>

@@ -10,8 +10,8 @@
 
           <div id="adv" class="grey sublock">
 
-            <a href="javascript:void(0)"><img src="content/tequillajazz.jpg" alt="" /></a>
-            <a href="javascript:void(0)"><img src="content/livejournal.jpg" alt="" /></a>
+            <a href="javascript:void(0)"><img src="{$resource_dir}/content/tequillajazz.jpg" alt="" /></a>
+            <a href="javascript:void(0)"><img src="{$resource_dir}/content/livejournal.jpg" alt="" /></a>
 
           </div><!-- //sublock -->
 

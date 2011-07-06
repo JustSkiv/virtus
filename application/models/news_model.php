@@ -7,7 +7,7 @@
 
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class News_model extends CI_Model
+class News_model extends Crud
 {
   public $table = '';
 
@@ -18,25 +18,16 @@ class News_model extends CI_Model
 
   }
 
-  function getNews()
+  function addNews()
   {
-    $query = $this->db->query('SELECT * FROM news ORDER BY `created_at` DESC');
-    return $query->result_array();
-  }
+    $this->load->library('translit');
 
-  function getNewsBySlug($slug)
-  {
-    $query = $this->db->get_where($this->table, array('slug' => $slug));
-    return $query->row_array();
-  }
-
-  function addNews($slug)
-  {
     $user = $this->ion_auth->get_user_array();
     $this->fb->dump("user", $user);
     if ($user['group_id'] > 2)
       show_error("У вас недостаточно прав для просмотра данной страницы.", 404, "Ошибка доступа");
 
+    $slug = $this->translit->rus2lat($this->input->post('title'));
     $data = array
     (
       'teaser' => $this->input->post('teaser'),

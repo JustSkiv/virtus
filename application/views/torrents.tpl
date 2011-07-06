@@ -5,8 +5,23 @@
     <span class="text">{$page_name}</span>
     <span class="notext right_border">&nbsp;</span>
   </h1>
-  <ul class="nolist toggle">
-    
-  </ul>
+  <table>
+    <tr>
+      <td>Жанр</td>
+      <td>Заголовок</td>
+      <td>Количество файлов</td>
+      <td>Размер</td>
+      <td>Просмотры</td>
+    </tr>
+  {foreach from=$torrents item="torrent"}
+    <tr>
+      <td><img src="{$resource_dir}/content/icons/{$torrent.genre_icon}"/></td>
+      <td>{$torrent.title}</td>
+      <td>{$torrent.files_count}</td>
+      <td>{$torrent.size}</td>
+      <td>{$torrent.views}</td>
+    </tr>
+  {/foreach}
+  </table>
 </div><!-- //block -->
 {include file="blocks/footer.tpl"}

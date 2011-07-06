@@ -12,7 +12,8 @@ class Init
   {
     $CI =& get_instance();
     $CI->load->helper('url');
-    $CI->load->model('menu');
+    $CI->load->model('crud');
+    $CI->load->model('menu_model');
 
     //$CI->load->library('ion_auth');
     $current_page = $CI->uri->rsegment(1); //имя текущего контроллера
@@ -21,7 +22,7 @@ class Init
 
     $CI->templates->assign(
       array(
-           'menu' => $CI->menu->getMenuNames(),
+           'menu' => $CI->menu_model->getAll(),
            'resource_dir' => $resource_dir,
            'current_page' => $current_page,
            'date_format' => $date_format,

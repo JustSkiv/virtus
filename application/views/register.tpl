@@ -9,6 +9,7 @@
   <div class='mainInfo'>
     <p>Cимволом * отмечены поля, обязательные для заполнения.</p>
 
+    <div class="validation_errors">{$validation_errors}</div>
     <div id="infoMessage"><?php echo $message;?></div>
     <form action="register" method="post" accept-charset="utf-8">
       <p>Имя пользователя:<br/>
@@ -27,7 +28,7 @@
         <input name="password" value="" id="password" type="password">
       </p>
 
-      <p>Повторите пароль:<br/>
+      <p>Подтверждение пароля:<br/>
         <input name="password_confirm" value="" id="password_confirm" type="password">
       </p>
 

@@ -18,23 +18,10 @@ class News extends CI_Controller
   {
     //news_page
   }
-  public function neww()
-  {
-    $this->load->library('templates');
-    $this->templates->assign(
-      array(
-           'news' => $this->news_model->getNews(),
-           'page_name' => 'Добавление новости',
-           'action' => site_url("news/create"),
-           'validation_errors' => ''
-      )
-    );
-    $this->templates->display('new_news.tpl');
-  }
 
   function detail($slug)
   {
-    $news = $this->news_model->getNewsBySlug($slug);
+    $news = $this->news_model->getBySlug($slug);
     $this->templates->assign(
       array(
            'news' => $news,
@@ -64,12 +51,12 @@ class News extends CI_Controller
     if ($this->form_validation->run() == true) {
       $title = strtolower($this->input->post('title'));
       $teaser = $this->input->post('teaser');
-      $slug = $this->translit->rus2lat($title);
+
       $text = $this->input->post('text');
     } else {
       $validation_errors = validation_errors();
     }
-    if ($this->form_validation->run() == true && $this->news_model->addNews($slug)) {
+    if ($this->form_validation->run() == true && $this->news_model->addNews()) {
       $this->session->set_flashdata('message', "Новость добавлена");
       redirect($this->config->item('base_url'), 'refresh');
     }
@@ -115,7 +102,7 @@ class News extends CI_Controller
       $this->templates->assign(
         array(
              'menu' => $this->menu->getMenuNames(),
-             'news' => $this->news_model->getNews(),
+             'news' => $this->news_model->getAll(),
              'date_format' => $date_format,
              'page_name' => 'Добавление новости',
              'action' => site_url("news/create"),

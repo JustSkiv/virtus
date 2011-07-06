@@ -3,7 +3,7 @@
 
 {foreach from=$menu item=item}
   <li>
-    <a href="{$item.url}" title="">
+    <a href="/{$item.url}" title="">
       <span class="notext left_border">&nbsp;</span>
       <span class="text">{$item.name}</span>
       <span class="notext right_border">&nbsp;</span>

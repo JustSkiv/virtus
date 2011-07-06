@@ -16,7 +16,7 @@
   {foreach from=$torrents item="torrent"}
     <tr>
       <td><img src="{$resource_dir}/content/icons/{$torrent.genre_icon}"/></td>
-      <td>{$torrent.title}</td>
+      <td><a href="{$base_url}/torrents/detail/{$torrent.slug}">{$torrent.title}</a></td>
       <td>{$torrent.files_count}</td>
       <td>{$torrent.size}</td>
       <td>{$torrent.views}</td>

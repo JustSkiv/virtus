@@ -35,6 +35,18 @@ class Torrents extends CI_Controller
     $this->templates->display('torrents.tpl');
   }
 
+  function detail($slug)
+  {
+    $torrent = $this->torrents_model->getTorrentBySlug($slug);
+    $this->templates->assign(
+      array(
+           'torrent' => $torrent,
+           'page_name' => "$torrent[title]",
+      )
+    );
+    $this->templates->display('torrents_detail.tpl');
+  }
+
   function create()
   {
     $this->load->library('form_validation');

@@ -34,6 +34,18 @@ class torrents_model extends Crud
 
   }
 
+  function getTorrentBySlug($slug)
+  {
+    $this->db->select('*');
+    $this->db->from($this->table);
+    $this->db->where('slug', $slug);
+    $this->db->join($this->table_genres, 'genres.id = torrents.id');
+
+    $query = $this->db->get();
+
+    return $query->row_array();
+  }
+
   function addTorrent()
   {
     $this->load->library('translit');

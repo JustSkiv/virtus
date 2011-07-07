@@ -29,7 +29,8 @@
         <div class="footer_inner">
           <span class="notext left_border">&nbsp;</span>
           <div class="text">
-            <p>Наши контакты</p>
+            <p>Обращаем Ваше внимание на то, что все материалы, размещенные на сервере virtus.kz, добавлены посетителями сайта.<br />
+						Администрация сайта не располагает информацией о правомерности публикования этих материалов.</p>
           </div>
           <span class="notext right_border">&nbsp;</span>
         </div><!-- //footer_inner -->

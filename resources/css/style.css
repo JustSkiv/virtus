@@ -1,85 +1,27 @@
 /* Darkhan Kutzhanov stylesheet */
-
-a:link, a:visited {
-  color: #ef9c00;
-}
-
-h1, h2 {
-  margin: 0;
-  padding: 0;
-}
-
-
-.nolist, .nolist li {
-  margin: 0;
-  padding: 0;
-}
-
-.nolist li {
-  list-style: none none outside;
-}
-
-.notext {
-  font-size: 0;
-  line-height: 0;
-}
-
-.clear-block {
-  clear: both;
-}
-
-.clearfix:after {
-  clear: both;
-  content: ".";
-  display: block;
-  height: 0;
-  visibility: hidden;
-}
-
-.grey {
-  background-color: #303030;
-  border-radius: 3px;
-  color: #fff;
-}
-
-.sublock {
-  margin: 10px;
-  padding: 10px 0;
-  text-align: center;
-}
-
-.adv img {
-  margin: 5px 0;
-}
-
-#content .sublock {
-  padding: 5px 15px;
-}
-
-.block {
-  margin-bottom: 10px;
-}
-
+a:link, a:visited {color: #ef9c00;}
+h1, h2 {margin: 0;padding: 0;}
+.nolist, .nolist li {margin: 0;padding: 0;}
+.nolist li {list-style: none none outside;}
+.notext {font-size: 0;line-height: 0;}
+.clear-block {clear: both;}
+.clearfix:after {clear: both;content: ".";display: block;height: 0;visibility: hidden;}
+.grey {background-color: #303030;border-radius: 3px;color: #fff;}
+.sublock {margin: 10px;padding: 10px 0;text-align: center;}
+.adv img {margin: 5px 0;}
+#content .sublock {padding: 5px 15px;}
+.block {margin-bottom: 10px;}
 /* news */
-
-.toggle li {
-  margin-bottom: 10px;
-}
-
-.toggle li a {
-  background-image: url('img/idown.png');
-  background-position: left top;
-  background-repeat: no-repeat;
-  display: block;
-  padding: 0 0 0 20px;
-  text-decoration: none;
-}
-
-.toggle li.active a {
-  background-image: url('img/icross.png');
-}
-
+.toggle li {margin-bottom: 10px;}
+.toggle li a {background-image: url('img/idown.png');background-position: left top;background-repeat: no-repeat;display: block;padding: 0 0 0 20px;text-decoration: none;}
+.toggle li.active a {background-image: url('img/icross.png');}
+.torrents_list {color:#fff;border-collapse: collapse;width:100%;}
+.torrents_list a:link,.torrents_list a:visited{text-decoration:none;color:#fff}
+.torrents_list a:hover{text-decoration:underline;color:#EF9C00;}
+.torrents_list thead {background-color:#595959;}
+.torrents_list td, .torrents_list th {padding: 5px;text-align:left;}
+.torrents_list td {vertical-align:top;}
+.torrents_list tr.active,.torrents_list tr:hover{background-color:#303030;}
+p.description em {color:#EF9C00;}
 /*skiv*/
-.validation_errors {
-  color: red;
-}
+.validation_errors {color: red;}

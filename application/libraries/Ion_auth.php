@@ -355,7 +355,7 @@ class Ion_auth
 	/**
 	 * login
 	 *
-	 * @return void
+	 * @return bool
 	 * @author Mathew
 	 **/
 	public function login($identity, $password, $remember=false)

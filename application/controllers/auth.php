@@ -45,11 +45,24 @@ class Auth extends Controller
   //log the user in
   function login()
   {
-    $this->data['title'] = "Login";
+    //$this->data['title'] = "Login";
+    $this->load->library('templates');
+    $this->load->model('menu_model');
+
+    $resource_dir = $this->config->item('resource_dir');
+    $date_format = "%d.%m.%y";
+    $this->templates->assign(
+      array(
+           'resource_dir' => $resource_dir,
+           'date_format' => $date_format,
+           'page_name' => 'Авторизация',
+           'message' => ''
+      )
+    );
 
     //validate form input
-    $this->form_validation->set_rules('email', 'Email Address', 'required|valid_email');
-    $this->form_validation->set_rules('password', 'Password', 'required');
+    $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+    $this->form_validation->set_rules('password', 'Пароль', 'required');
 
     if ($this->form_validation->run() == true) { //check to see if the user is logging in
       //check for "remember me"
@@ -63,8 +76,8 @@ class Auth extends Controller
       else
       { //if the login was un-successful
         //redirect them back to the login page
-        $this->session->set_flashdata('message', $this->ion_auth->errors());
-        redirect('auth/login', 'refresh'); //use redirects instead of loading views for compatibility with MY_Controller libraries
+        $this->templates->assign('message', $this->ion_auth->errors());
+        $this->templates->display('login.tpl'); //use redirects instead of loading views for compatibility with MY_Controller libraries
       }
     }
     else
@@ -82,7 +95,9 @@ class Auth extends Controller
                                       'type' => 'password',
       );
 
-      $this->load->view('auth/login', $this->data);
+      //$this->load->view('auth/login', $this->data);
+      $this->templates->assign('message', $this->data['message']);
+      $this->templates->display('login.tpl');
     }
   }
 

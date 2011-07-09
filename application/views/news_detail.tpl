@@ -6,8 +6,6 @@
     <span class="notext right_border">&nbsp;</span>
   </h1>
 
-  <h1>{$news.title}</h1>
-
   <div class="news_main_text">{$news.text}</div>
 
 </div><!-- //block -->

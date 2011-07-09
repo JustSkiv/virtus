@@ -13,9 +13,6 @@
     <span class="notext right_border">&nbsp;</span>
   </h1>
 
-  <h1>{$torrent.title}</h1>
-
   <div class="torrent_main_text">{$torrent.text}</div>
 
 </div><!-- //block -->
-{include file="blocks/footer.tpl"}

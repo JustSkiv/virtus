@@ -34,7 +34,7 @@ body {background-color:#3d3d3d;color:#e7e6e6;font-family:Tahoma, Arial, sans-ser
 /* userbar */
 .userbar_wrapper {position:absolute;right:10px;top:0;text-transform:lowercase;z-index:2;}
 .userbar {height:40px;line-height:12px;padding:0 7px;position:relative;}
-.userbar form div {background:url('../img/login_bg.png') repeat-x left top;height:33px;padding:2px 90px 5px 5px;}
+.userbar form div, .userbar .userbar_logged {background:url('../img/login_bg.png') repeat-x left top;height:33px;padding:2px 90px 5px 5px;}
 .userbar a:link, .userbar a:visited {color:#ef9c00;padding-left:3px;text-decoration:none;}
 .userbar a:hover {text-decoration:underline;}
 .userbar p {display:block;margin:0;padding:0;position:absolute;right:10px;top:3px;z-index:2;width:80px;}

@@ -16,9 +16,11 @@
           <div class="right_border notext">&nbsp;</div>
 
         {if $is_authorized}
+          <div class="userbar_logged">
           <div class="text">Добро пожаловать: {$current_user.username}</div>
           <a href="javascript:void(0)">Личный кабинет</a>
           <a href="{$base_url}auth/logout">Выход</a>
+          </div>
           {else}
           <form method="post" action="{$base_url}auth/login">
             <div>
